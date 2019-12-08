@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<form action="/profile_updated/{{row.id}}" method="POST">
+    {% csrf_token %}
+      <h1>registration edit</h1><br><br>
+    <div class="form-group">
+       <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" value="{{row.name}}" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" value="{{row.email}}" name="email">
+    </div>
+   
+    <button type="submit" class="btn btn-default">Submit</button><br>
+    <a href="/">Login</a>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Gelasio|Oswald&display=swap" rel="stylesheet">
+<style type="text/css">
+
+	body {
+		background-image: url('/static/img/bg.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+
+
+	.box{
+    	position: absolute;
+		padding-left: 2%;
+		font-family: 'Slabo 27px', serif;
+		font-size: 20px;
+		margin-left: 20%;
+		box-shadow: 10px 10px 8px 10px #00ceff8a;
+		margin-bottom: 5%;
+	}
+
+	.box .inputbox input{
+		border: none;
+		border-bottom: 2px solid black;
+		background: transparent;
+		outline: none;
+		width: 70%;
+	}
+
+	.box .inputbox input:focus{
+				border-color: #1ac6ff;
+
+
+	}
+
+	label{
+		color:  blue;
+		display: inline-block;
+
+	}
+
+</style>
+</head>
+<body>
+{% include "layouts/sidebar.html" %}
+<div class="container">	
+	<div class="box">
+		<form>
+  	{% csrf_token %}
+
+
+
+<div class="row">
+	<div class="col-md-5">
+   	  <label for="genregno">Gen-reg-no</label><br>
+      <label for="name">Name : </label><br>
+      <label for="cast">Race and Caste : </label><br>
+      <label for="subcast">Sub-Caste : </label><br>
+      <label for="nationality">Nationality : </label><br>
+      <label for="enrollment">Enrollment</label><br>
+	  <label for="birthplace">Place of birth</label><br>
+	  <label for="dob">Enter date of birth</label><br>
+	  <label for="lastschool">Last School/College attended</label><br>
+	  <label for="progress">Progress</label><br>
+	  <label for="conduct">Conduct</label><br>
+	  <label for="dol">Day of leaving institute</label><br>
+	  <label for="course">Course and year in which studying</label><br>
+	  <label for="reason">Reason for leaving institute</label><br>
+	  <label for="remark">Remark</label><br>
+	  <label for="place">place</label><br>
+	  <label for="date">Date</label><br>
+		
+	</div>
+	<div class="col-md-7 inputbox">
+      	<input type="number" id="genregno" name="gen-reg-no"><br>
+      	<input type="name" id="name" name="name"><br>
+		<input type="text" id="cast" name="cast"><br>
+		<input type="text" id="subcast" name="subcast"><br>
+		<input type="text" id="nationality" name="nationality"><br>
+		<input type="number" id="enrollment" name="enrollment" required><br>
+	    <input type="text" id="birthplace" name="birthplace"><br>
+	    <input type="date" id="dob" name="dob"><br>
+	    <input type="text" id="lastschool" name="lastschool"><br>
+	    <input type="text" id="progress" name="progress"><br>
+	    <input type="text" id="conduct" name="conduct"><br>
+	    <input type="date" id="dob" name="dol"><br>
+	    <input type="text" id="course" name="course"><br>
+	    <input type="text" id="reason" name="reason"><br>
+	    <input type="text" id="remark" name="remark"><br>
+	    <input type="text" id="place" name="place"><br>
+	    <input type="date" id="date" name="date"><br>
+		
+</div>
+</div>
+
+
+
+
+
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+	</div>
+</div>
+
+</body>
+</html>

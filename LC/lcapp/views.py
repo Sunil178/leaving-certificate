@@ -86,7 +86,8 @@ def genlc(request):
 
 def adddata(request):
 	if 'userEmail' in request.session:
-		return render(request, 'index.html')
+		last_student = Students.objects.all().order_by('-id').first()
+		return render(request, 'index.html', {'ls' : int(last_student.serial_no)+1})
 	else:
 		return redirect('/')
 
@@ -159,3 +160,6 @@ def home(request):
 		return render(request, 'home.html')
 	else:
 		return redirect('/')
+
+def form(request):
+	return render(request, 'form.html')

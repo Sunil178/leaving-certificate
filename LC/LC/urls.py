@@ -36,5 +36,6 @@ urlpatterns = [
     path('delete/', views.delete),
     path('home/', views.home),
     path('logout/', views.logOut),
+    path('form/', views.form),
 
 ]

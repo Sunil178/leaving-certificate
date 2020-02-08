@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+{% load static %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;
+        background: url({% static '/img/loginbg.jpg' %});
+        background-size: cover;
+        background-repeat: no-repeat;
+}
 * {box-sizing: border-box;}
 
 .input-container {
@@ -23,6 +28,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%;
   margin-bottom: 15px;
 }
+
+.box{
+    margin-top: 8%;
+    background-color: #ffffff;
+    width: 30%;
+    margin-left: 35%;
+    box-shadow: 0 15px 25px rgba(0,0,0,10);
+    border-radius: 10%;
+    padding-bottom: 2%;
+  }
 
 .icon {
   padding: 10px;
@@ -35,6 +50,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .input-field {
   width: 100%;
   padding: 10px;
+  border: 1px solid black;
   outline: none;
 }
 
@@ -57,15 +73,23 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 1;
 }
 
+.responsive{
+  width: 40%;
+  height: auto;
+}
+
 
 </style>
 </head>
 <body>
-  
-<form id = "myform" method="POST" action="/loggedin/" style="max-width:500px;margin:auto">
+
+  <div class="box">
+    
+<form id = "myform" method="POST" action="/loggedin/" style="max-width:400px;margin:auto">
 	{% csrf_token %}
-  <h2>Login Form</h2>
-	
+  <center>
+    <img src="static/img/login.png" class="responsive" style="margin-top: 2%;">
+  </center>
   <ul class="error"></ul>
 <br><br>
   <div class="input-container">
@@ -79,9 +103,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   </div>
 
   <button type="submit" class="btn">Login</button>
-
-  <a href="/registrationform/">register here</a>
+<br>
+<br>
+  <a href="/registrationform/">Register here</a>
+  </div>
 </form>
+  <!-- <img src="static/img/login.png" style="margin-top: -10%; margin-left: 60%;"> -->
 <script>
    if ("{{ status }}" == 1){
      $('.error').append('<li class="alert alert-danger">Login id or password is invalid..</li>')
